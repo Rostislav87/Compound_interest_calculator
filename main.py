@@ -6,7 +6,7 @@ window = Tk()
 message = messagebox
 currencies = ["CZK", "EUR", "USD"]
 window.title("Kalkulačka složeného úročení verze 1.0.0")
-window.geometry("600x400+1000+20")
+window.geometry("500x400+1000+20")
 window.resizable(True, True)
 
 def count_result():
@@ -20,6 +20,12 @@ def count_result():
         currency_label.config(text=currency)
     except:
         message.showinfo(title="Upozornění", message="Zadej všechny hodnoty!")
+
+def delete_inputs():
+    user_amount_input.delete(0, END)
+    user_interest_rate_input.delete(0, END)
+    user_years_input.delete(0, END)
+    final_amount_label.config(text="0")
 
 amount_label = Label(text="Investovaná částka:", font=("Arial", 20))
 amount_label.grid(row=0, column=0, padx=10, pady=10)
@@ -52,6 +58,9 @@ user_years_input.grid(row=2, column=1, padx=10, pady=25)
 
 count_button = Button(window, text="Spočítej", font=("Arial", 20), command=count_result)
 count_button.grid(row=3, column=1, padx=10, pady=10)
+
+delete_button = Button(window, text="Smazat", font=("Arial", 20), command=delete_inputs)
+delete_button.grid(row=3, column=2, padx=10, pady=10)
 
 result_label = Label(text="Konečná částka:", font=("Arial", 20))
 result_label.grid(row=4, column=0, padx=10, pady=10)
