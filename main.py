@@ -22,9 +22,9 @@ def count_result():
         message.showinfo(title="Upozornění", message="Zadej všechny hodnoty!")
 
 def delete_inputs():
-    user_amount_input.delete(0, END)
-    user_interest_rate_input.delete(0, END)
-    user_years_input.delete(0, END)
+    values = [user_amount_input, user_interest_rate_input, user_years_input]
+    for value in values:
+        value.delete(0, END)
     final_amount_label.config(text="0")
 
 amount_label = Label(text="Investovaná částka:", font=("Arial", 20))
