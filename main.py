@@ -6,7 +6,7 @@ window = Tk()
 message = messagebox
 currencies = ["CZK", "EUR", "USD"]
 window.title("Kalkulačka složeného úročení verze 1.0.0")
-window.geometry("500x400+1000+20")
+window.geometry("650x400+1000+20")
 window.resizable(True, True)
 
 def count_result():
